@@ -1,5 +1,6 @@
 package com.example.gamelab.activity
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageButton
@@ -35,7 +36,7 @@ class CatalogActivity : AppCompatActivity() {
 
         }
         buttonCart.setOnClickListener {
-
+            startActivity(Intent(this, GamesActivity::class.java))
         }
     }
 }
