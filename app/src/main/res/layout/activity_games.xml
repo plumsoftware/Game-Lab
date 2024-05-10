@@ -142,11 +142,13 @@
 
         <Button
             android:id="@+id/buttonPay"
+            style="@style/Button.White"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="36dp"
             android:layout_weight="0"
+            android:backgroundTint="@color/primary"
             android:text="Оплатить"
             android:textColor="#CAC1C1"
             android:textSize="25sp" />

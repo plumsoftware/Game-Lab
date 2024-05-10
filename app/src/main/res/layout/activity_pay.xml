@@ -81,7 +81,7 @@
                     android:layout_marginStart="48dp"
                     android:layout_weight="0"
                     android:backgroundTint="#000000"
-                    android:checked="true" />
+                    android:checked="false" />
             </LinearLayout>
 
             <LinearLayout
@@ -121,7 +121,7 @@
         </RadioGroup>
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/payBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="24dp"

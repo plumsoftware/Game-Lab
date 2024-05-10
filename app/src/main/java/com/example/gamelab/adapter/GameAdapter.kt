@@ -44,7 +44,13 @@ class GameAdapter(private val list: List<Game>) : RecyclerView.Adapter<GameAdapt
         holder.gameGenre.text = "Жанр игры: ${item.genre}"
         holder.gameLogo.setImageResource(item.logoResId)
         holder.gameName.text = item.name
-        holder.gamePrice.text = item.price.toString()
+        holder.gamePrice.text = "${item.price.toString()}₽"
+
+        if (gameToBuy.contains(item)) {
+            holder.buttonAddToCart.text = "Убрать"
+        } else {
+            holder.buttonAddToCart.text = "В корзину"
+        }
 
         holder.buttonAddToCart.setOnClickListener {
             if (!gameToBuy.contains(item)) {

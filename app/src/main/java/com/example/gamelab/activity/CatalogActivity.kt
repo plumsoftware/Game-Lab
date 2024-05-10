@@ -1,6 +1,7 @@
 package com.example.gamelab.activity
 
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageButton
@@ -16,12 +17,19 @@ import com.example.gamelab.utility.gameList
 class CatalogActivity : AppCompatActivity() {
 
     companion object {
-        val gameToBuy = mutableListOf<Game>()
+        var gameToBuy = mutableListOf<Game>()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_catalog)
+
+        gameToBuy = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            intent.getParcelableArrayListExtra("games", Game::class.java)?.toMutableList() ?: mutableListOf()
+        } else {
+            val i: ArrayList<Game> = intent.getParcelableArrayListExtra("games")!!
+            i.toMutableList()
+        }
 
         val recyclerGames = findViewById<RecyclerView>(R.id.recyclerGames)
         val buttonCart = findViewById<ImageButton>(R.id.buttonCart)
@@ -33,10 +41,16 @@ class CatalogActivity : AppCompatActivity() {
         recyclerGames.adapter = adapter
 
         buttonSave.setOnClickListener {
-            startActivity(Intent(this, GamesActivity::class.java))
+            startActivity(Intent(this, GamesActivity::class.java).apply {
+                val array = arrayListOf<Game>()
+                array.addAll(gameToBuy)
+                putParcelableArrayListExtra("games", array)
+            })
+            finish()
         }
         buttonCart.setOnClickListener {
             startActivity(Intent(this, GamesActivity::class.java))
+            finish()
         }
     }
 }
