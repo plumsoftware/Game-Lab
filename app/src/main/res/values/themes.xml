@@ -1,11 +1,30 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.GameLab" parent="Theme.Material3.DayNight.NoActionBar">
-        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimary">#000</item>
         <item name="colorOnBackground">@color/white</item>
         <item name="backgroundColor">@color/background</item>
         <item name="android:textColor">@color/text_color</item>
+
+        <item name="colorControlActivated">#000</item>
+        <item name="colorControlHighlight">#000</item>
+        <item name="colorAccent">#000</item>
     </style>
 
     <style name="Theme.GameLab" parent="Base.Theme.GameLab" />
+
+    <style name="radionbutton"
+        parent="Base.Widget.AppCompat.CompoundButton.RadioButton">
+        <item name="android:button">@drawable/radiobutton_drawable</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+    <style name="Button.White" parent="ThemeOverlay.AppCompat">
+        <item name="colorAccent">@color/primary</item>
+        <item name="colorPrimary">@color/primary</item>
+    </style>
 </resources>

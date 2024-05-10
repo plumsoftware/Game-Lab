@@ -33,7 +33,7 @@ class CatalogActivity : AppCompatActivity() {
         recyclerGames.adapter = adapter
 
         buttonSave.setOnClickListener {
-
+            startActivity(Intent(this, GamesActivity::class.java))
         }
         buttonCart.setOnClickListener {
             startActivity(Intent(this, GamesActivity::class.java))

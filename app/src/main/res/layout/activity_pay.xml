@@ -128,7 +128,8 @@
             android:layout_weight="0"
             android:text="Оплатить"
             android:textColor="#FFF"
-            android:textSize="25sp" />
+            android:textSize="25sp"
+            android:theme="@style/Button.White" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

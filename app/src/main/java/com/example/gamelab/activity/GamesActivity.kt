@@ -1,6 +1,7 @@
 package com.example.gamelab.activity
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageButton
@@ -42,7 +43,7 @@ class GamesActivity : AppCompatActivity() {
             finish()
         }
         buttonPay.setOnClickListener {
-
+            startActivity(Intent(this, PayActivity::class.java))
         }
     }
 }

@@ -36,6 +36,7 @@
             android:gravity="center"
             android:hint="Login"
             android:inputType="text"
+            android:textColor="#FFF"
             android:textColorHint="@color/text_color"
             android:textSize="20sp" />
 
@@ -49,6 +50,7 @@
             android:gravity="center"
             android:hint="Password"
             android:inputType="textPassword"
+            android:textColor="#FFF"
             android:textColorHint="@color/text_color"
             android:textSize="20sp" />
 
